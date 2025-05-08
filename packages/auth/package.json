@@ -1,0 +1,16 @@
+{
+  "name":"@acl/auth",
+  "version":"0.0.0",
+  "private":true,
+  "main":"index.ts",
+  "types":"src/index.ts",
+  "devDependencies":{
+    "@acl/prettier":"workspace:*",
+    "@acl/eslint-config":"workspace:*",
+    "@acl/tsconfig":"workspace:*"
+  },
+  "eslintConfig":{
+    "extends":["@acl/eslint-config/base"]
+  },
+  "prettier":"@acl/prettier"
+}
