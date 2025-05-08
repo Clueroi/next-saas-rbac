@@ -35,6 +35,18 @@ importers:
 
   config/typescript-config: {}
 
+  packages/auth:
+    devDependencies:
+      '@acl/eslint-config':
+        specifier: workspace:*
+        version: link:../../config/eslint-config
+      '@acl/prettier':
+        specifier: workspace:*
+        version: link:../../config/prettier
+      '@acl/tsconfig':
+        specifier: workspace:*
+        version: link:../../config/typescript-config
+
 packages:
 
   '@eslint-community/eslint-utils@4.7.0':
