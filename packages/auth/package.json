@@ -1,16 +1,21 @@
 {
-  "name":"@acl/auth",
-  "version":"0.0.0",
-  "private":true,
-  "main":"index.ts",
-  "types":"src/index.ts",
-  "devDependencies":{
-    "@acl/prettier":"workspace:*",
-    "@acl/eslint-config":"workspace:*",
-    "@acl/tsconfig":"workspace:*"
+  "name": "@acl/auth",
+  "version": "0.0.0",
+  "private": true,
+  "main": "index.ts",
+  "types": "src/index.ts",
+  "devDependencies": {
+    "@acl/eslint-config": "workspace:*",
+    "@acl/prettier": "workspace:*",
+    "@acl/tsconfig": "workspace:*"
   },
-  "eslintConfig":{
-    "extends":["@acl/eslint-config/base"]
+  "eslintConfig": {
+    "extends": [
+      "@acl/eslint-config/base"
+    ]
   },
-  "prettier":"@acl/prettier"
+  "prettier": "@acl/prettier",
+  "dependencies": {
+    "@casl/ability": "^6.7.3"
+  }
 }
