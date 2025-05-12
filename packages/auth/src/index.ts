@@ -11,25 +11,30 @@ import { organizationSubject } from './subjects/organization';
 import { billingSubject } from './subjects/billing';
 
 
-export type Subjects = 'User' | 'Project';
+
+export type AppActions = 'create' | 'get' | 'update' | 'delete' | 'manage' | 'transfer_ownership';
+
+export type AppSubjects = 'User' | 'Project' | 'Organization' | 'Invite' | 'Billing' | 'all';
+
 
 // export type AppAbilities = UserSubject | ProjectSubject | InviteSubject | OrganizationSubject | BillingSubject | ['manage', 'all']
 
-const appAbilitiesSchema = z.union([
-  projectSubject,
-  userSubject,
-  inviteSubject,
-  organizationSubject,
-  billingSubject,
+// const appAbilitiesSchema = z.union([
+//   projectSubject,
+//   userSubject,
+//   inviteSubject,
+//   organizationSubject,
+//   billingSubject,
 
-  z.tuple([z.literal('manage'), z.literal('all')]),
-])
+//   z.tuple([z.literal('manage'), z.literal('all')]),
+// ])
 
-type AppAbilities = z.infer<typeof appAbilitiesSchema>
+// type AppAbilities = z.infer<typeof appAbilitiesSchema>
 
 
-export type AppAbility = MongoAbility<AppAbilities>;
+export type AppAbility = MongoAbility<[AppActions, AppSubjects | { __typename: AppSubjects }]>;
 export const createAppAbility = createMongoAbility as CreateAbility<AppAbility>;
+
 
 export function defineAbilityFor(user: User) {
   const builder = new AbilityBuilder(createAppAbility)
@@ -40,7 +45,11 @@ export function defineAbilityFor(user: User) {
 
   permissions[user.role](user, builder)
 
-  const ability = builder.build()
+  const ability = builder.build({
+    detectSubjectType(subject){
+      return subject.__typename
+    }
+  })
 
   return ability
 }

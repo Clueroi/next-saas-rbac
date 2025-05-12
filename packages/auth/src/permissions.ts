@@ -1,21 +1,20 @@
-import { AbilityBuilder } from "@casl/ability"
-import { AppAbility } from "."
-import { User } from "./models/user"
-import { Role } from "./roles"
+import type { AbilityBuilder } from '@casl/ability';
+import type { AppAbility } from '.';
+import { User } from './models/user';
+import type { Project } from './models/project';
+import type { Organization } from './models/organization';
 
-type PermissionsByRole = (user: User, builder: AbilityBuilder<AppAbility>) => void
+type PermissionsByRole = (user: User, builder: AbilityBuilder<AppAbility>) => void;
 
-type Roles = 'ADMIN' | 'MEMBER'
-
-export const permissions: Record<Role, PermissionsByRole> = {
+export const permissions: Record<string, PermissionsByRole> = {
   ADMIN: (_, { can }) => {
-    can('manage', 'all')
+    can('manage', 'all');
   },
-  MEMBER: (_, { can }) => {
-    // can('invite', 'User')
-    can('manage', 'project')
+  MEMBER: (user, { can }) => {
+    can(['create', 'get'], 'Project');
+    can(['update', 'delete'], 'Project' as const, { ownerId: user.id } as Partial<Project>);
+    can('delete', 'Organization' as const, { ownerId: user.id } as Partial<Organization>);
   },
   BILLING: (_, { can }) => {
   }
-}
-
+};
