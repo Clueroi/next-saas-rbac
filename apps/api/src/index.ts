@@ -1,3 +1,3 @@
-import { ability } from '@acl/auth'
+import { defineAbilityFor } from '@acl/auth'
 
-const userCanInviteSomeoneElse = ability.can('invite', 'User')
+const ability = defineAbilityFor({role: 'ADMIN'})
