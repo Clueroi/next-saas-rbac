@@ -6,7 +6,7 @@ export const userSubject = z.tuple([
     z.literal('get'),
     z.literal('delete'),
   ]),
-  z.literal('user'),
+  z.literal('User'),
 ])
 
 export type UserSubject = z.infer<typeof userSubject>
