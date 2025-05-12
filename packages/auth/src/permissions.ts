@@ -12,6 +12,7 @@ export const permissions: Record<Roles, PermissionsByRole> = {
   },
   MEMBER: (_, { can }) => {
     can('invite', 'User')
+    can('manage', 'Project')
   },
 }
 
