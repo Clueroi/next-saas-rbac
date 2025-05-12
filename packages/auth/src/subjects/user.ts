@@ -1,3 +1,12 @@
-export type UserSubject = [
-  'create' | 'invite' | 'delete' | 'manage' | 'User',
-]
+import {z} from 'zod';
+
+export const userSubject = z.tuple([
+  z.union([
+    z.literal('manage'),
+    z.literal('get'),
+    z.literal('delete'),
+  ]),
+  z.literal('user'),
+])
+
+export type UserSubject = z.infer<typeof userSubject>

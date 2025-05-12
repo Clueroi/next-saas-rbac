@@ -7,13 +7,7 @@ import { ProjectSubject } from './subjects/project';
 
 export type Subjects = 'User' | 'Project';
 
-export type AppAbilities =
-  | ['manage', 'all']
-  | ['invite', 'User']
-  | ['create', 'Project']
-  | ['delete', 'Project']
-  | ['manage', 'User']
-  | ['manage', 'Project']
+export type AppAbilities = UserSubject | ProjectSubject | ['manage', 'all']
 
 
 export type AppAbility = MongoAbility<AppAbilities>;
