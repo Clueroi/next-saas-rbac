@@ -9,7 +9,7 @@ export const projectSubject = z.tuple([
     z.literal('delete'),
     z.literal('manage'),
   ]),
-  z.union([z.literal('project'), projectSchema]),
+  z.union([z.literal('Project'), projectSchema]),
 ])
 
 export type ProjectSubject = z.infer<typeof projectSubject>

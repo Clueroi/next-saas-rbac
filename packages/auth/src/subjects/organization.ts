@@ -6,10 +6,11 @@ export const organizationSubject = z.tuple([
     z.literal('manage'),
     z.literal('create'),
     z.literal('get'),
+    z.literal('update'),
     z.literal('delete'),
     z.literal('transfer_ownership'),
   ]),
-  z.union([z.literal('organization'), organizationSchema]),
+  z.union([z.literal('Organization'), organizationSchema]),
 ])
 
 export type OrganizationSubject = z.infer<typeof organizationSubject>
