@@ -8,6 +8,7 @@
     "@acl/auth": "workspace:*",
     "@fastify/cors": "^11.0.1",
     "@prisma/client": "6.7.0",
+    "bcryptjs": "^3.0.2",
     "fastify": "^5.3.3",
     "fastify-type-provider-zod": "^4.0.2",
     "zod": "^3.24.4"
@@ -16,6 +17,7 @@
     "@acl/eslint-config": "workspace:*",
     "@acl/prettier": "workspace:*",
     "@acl/tsconfig": "workspace:*",
+    "@types/bcryptjs": "^3.0.0",
     "@types/node": "^22.15.17",
     "prisma": "^6.7.0",
     "tsx": "^4.19.4"
