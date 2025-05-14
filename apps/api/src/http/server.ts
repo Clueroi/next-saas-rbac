@@ -12,6 +12,7 @@ import {
 } from "fastify-type-provider-zod";
 import { createAccount } from "./routes/auth/createAccount.controller";
 import { authenticateWithPassword } from "./routes/auth/authenticate-with-password.controller";
+import { getUserProfile } from "./routes/auth/get-profile.controller";
 
 const app = fastify().withTypeProvider<ZodTypeProvider>()
 
@@ -38,16 +39,17 @@ app.register(fastifySwaggerUi, {
 // Fastify Configuration
 app.register(fastifyJwt, {
   secret: 'my-jwt-secret',
-  
+
 })
 app.register(fastifyCors)
 
 
-//Routes
-
+//Routes POST
 app.register(createAccount)
 app.register(authenticateWithPassword)
 
+//Routes GET
+app.register(getUserProfile)
 
 
 app.listen({
