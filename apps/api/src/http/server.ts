@@ -13,11 +13,11 @@ import {
 import { createAccount } from "./routes/auth/createAccount.controller";
 import { authenticateWithPassword } from "./routes/auth/authenticate-with-password.controller";
 import { getUserProfile } from "./routes/auth/get-profile.controller";
+import { errorHandler } from "./error-handler";
 
 const app = fastify().withTypeProvider<ZodTypeProvider>()
 
 //Configurations
-
 app.setSerializerCompiler(serializerCompiler)
 app.setValidatorCompiler(validatorCompiler)
 app.register(fastifySwagger, {
@@ -35,6 +35,8 @@ app.register(fastifySwaggerUi, {
   routePrefix: '/docs'
 }
 )
+
+app.setErrorHandler(errorHandler)
 
 // Fastify Configuration
 app.register(fastifyJwt, {
