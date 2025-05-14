@@ -23,12 +23,9 @@ importers:
       '@prisma/client':
         specifier: 6.7.0
         version: 6.7.0(prisma@6.7.0(typescript@5.8.3))(typescript@5.8.3)
-<<<<<<< HEAD
       bcryptjs:
         specifier: ^3.0.2
         version: 3.0.2
-=======
->>>>>>> 06da71631c7ee139b7cd6359838869e9a2be29d2
       fastify:
         specifier: ^5.3.3
         version: 5.3.3
@@ -48,6 +45,9 @@ importers:
       '@acl/tsconfig':
         specifier: workspace:*
         version: link:../../config/typescript-config
+      '@faker-js/faker':
+        specifier: ^9.7.0
+        version: 9.7.0
       '@types/bcryptjs':
         specifier: ^3.0.0
         version: 3.0.0
@@ -275,6 +275,10 @@ packages:
   '@eslint/js@8.57.1':
     resolution: {integrity: sha512-d9zaMRSTIKDLhctzH12MtXvJKSSUhaHcjV+2Z+GK+EEY7XKpP5yR4x+N3TAcHTcu963nIr+TMcCb4DBCYX1z6Q==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+
+  '@faker-js/faker@9.7.0':
+    resolution: {integrity: sha512-aozo5vqjCmDoXLNUJarFZx2IN/GgGaogY4TMJ6so/WLZOWpSV7fvj2dmrV6sEAnUm1O7aCrhTibjpzeDFgNqbg==}
+    engines: {node: '>=18.0.0', npm: '>=9.0.0'}
 
   '@fastify/ajv-compiler@4.0.2':
     resolution: {integrity: sha512-Rkiu/8wIjpsf46Rr+Fitd3HRP+VsxUFDDeag0hs9L0ksfnwx2g7SPQQTFL0E8Qv+rfXzQOxBJnjUB9ITUDjfWQ==}
@@ -1893,6 +1897,8 @@ snapshots:
       - supports-color
 
   '@eslint/js@8.57.1': {}
+
+  '@faker-js/faker@9.7.0': {}
 
   '@fastify/ajv-compiler@4.0.2':
     dependencies:

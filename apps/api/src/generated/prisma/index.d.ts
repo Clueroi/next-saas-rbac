@@ -7068,7 +7068,8 @@ export namespace Prisma {
 
   export type OrganizationMinAggregateOutputType = {
     id: string | null
-    userId: string | null
+    name: string | null
+    ownerId: string | null
     slug: string | null
     domain: string | null
     shouldAttachUsersByDomain: boolean | null
@@ -7079,7 +7080,8 @@ export namespace Prisma {
 
   export type OrganizationMaxAggregateOutputType = {
     id: string | null
-    userId: string | null
+    name: string | null
+    ownerId: string | null
     slug: string | null
     domain: string | null
     shouldAttachUsersByDomain: boolean | null
@@ -7090,7 +7092,8 @@ export namespace Prisma {
 
   export type OrganizationCountAggregateOutputType = {
     id: number
-    userId: number
+    name: number
+    ownerId: number
     slug: number
     domain: number
     shouldAttachUsersByDomain: number
@@ -7103,7 +7106,8 @@ export namespace Prisma {
 
   export type OrganizationMinAggregateInputType = {
     id?: true
-    userId?: true
+    name?: true
+    ownerId?: true
     slug?: true
     domain?: true
     shouldAttachUsersByDomain?: true
@@ -7114,7 +7118,8 @@ export namespace Prisma {
 
   export type OrganizationMaxAggregateInputType = {
     id?: true
-    userId?: true
+    name?: true
+    ownerId?: true
     slug?: true
     domain?: true
     shouldAttachUsersByDomain?: true
@@ -7125,7 +7130,8 @@ export namespace Prisma {
 
   export type OrganizationCountAggregateInputType = {
     id?: true
-    userId?: true
+    name?: true
+    ownerId?: true
     slug?: true
     domain?: true
     shouldAttachUsersByDomain?: true
@@ -7209,7 +7215,8 @@ export namespace Prisma {
 
   export type OrganizationGroupByOutputType = {
     id: string
-    userId: string
+    name: string
+    ownerId: string
     slug: string
     domain: string | null
     shouldAttachUsersByDomain: boolean
@@ -7237,7 +7244,8 @@ export namespace Prisma {
 
   export type OrganizationSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    userId?: boolean
+    name?: boolean
+    ownerId?: boolean
     slug?: boolean
     domain?: boolean
     shouldAttachUsersByDomain?: boolean
@@ -7253,7 +7261,8 @@ export namespace Prisma {
 
   export type OrganizationSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    userId?: boolean
+    name?: boolean
+    ownerId?: boolean
     slug?: boolean
     domain?: boolean
     shouldAttachUsersByDomain?: boolean
@@ -7265,7 +7274,8 @@ export namespace Prisma {
 
   export type OrganizationSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    userId?: boolean
+    name?: boolean
+    ownerId?: boolean
     slug?: boolean
     domain?: boolean
     shouldAttachUsersByDomain?: boolean
@@ -7277,7 +7287,8 @@ export namespace Prisma {
 
   export type OrganizationSelectScalar = {
     id?: boolean
-    userId?: boolean
+    name?: boolean
+    ownerId?: boolean
     slug?: boolean
     domain?: boolean
     shouldAttachUsersByDomain?: boolean
@@ -7286,7 +7297,7 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type OrganizationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "slug" | "domain" | "shouldAttachUsersByDomain" | "avatarUrl" | "cretatedAt" | "updatedAt", ExtArgs["result"]["organization"]>
+  export type OrganizationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "ownerId" | "slug" | "domain" | "shouldAttachUsersByDomain" | "avatarUrl" | "cretatedAt" | "updatedAt", ExtArgs["result"]["organization"]>
   export type OrganizationInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     owner?: boolean | UserDefaultArgs<ExtArgs>
     invites?: boolean | Organization$invitesArgs<ExtArgs>
@@ -7311,7 +7322,8 @@ export namespace Prisma {
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
-      userId: string
+      name: string
+      ownerId: string
       slug: string
       domain: string | null
       shouldAttachUsersByDomain: boolean
@@ -7746,7 +7758,8 @@ export namespace Prisma {
    */
   interface OrganizationFieldRefs {
     readonly id: FieldRef<"Organization", 'String'>
-    readonly userId: FieldRef<"Organization", 'String'>
+    readonly name: FieldRef<"Organization", 'String'>
+    readonly ownerId: FieldRef<"Organization", 'String'>
     readonly slug: FieldRef<"Organization", 'String'>
     readonly domain: FieldRef<"Organization", 'String'>
     readonly shouldAttachUsersByDomain: FieldRef<"Organization", 'Boolean'>
@@ -8258,7 +8271,7 @@ export namespace Prisma {
     cretatedAt: Date | null
     updatedAt: Date | null
     organizationId: string | null
-    userId: string | null
+    ownerId: string | null
   }
 
   export type ProjectMaxAggregateOutputType = {
@@ -8270,7 +8283,7 @@ export namespace Prisma {
     cretatedAt: Date | null
     updatedAt: Date | null
     organizationId: string | null
-    userId: string | null
+    ownerId: string | null
   }
 
   export type ProjectCountAggregateOutputType = {
@@ -8282,7 +8295,7 @@ export namespace Prisma {
     cretatedAt: number
     updatedAt: number
     organizationId: number
-    userId: number
+    ownerId: number
     _all: number
   }
 
@@ -8296,7 +8309,7 @@ export namespace Prisma {
     cretatedAt?: true
     updatedAt?: true
     organizationId?: true
-    userId?: true
+    ownerId?: true
   }
 
   export type ProjectMaxAggregateInputType = {
@@ -8308,7 +8321,7 @@ export namespace Prisma {
     cretatedAt?: true
     updatedAt?: true
     organizationId?: true
-    userId?: true
+    ownerId?: true
   }
 
   export type ProjectCountAggregateInputType = {
@@ -8320,7 +8333,7 @@ export namespace Prisma {
     cretatedAt?: true
     updatedAt?: true
     organizationId?: true
-    userId?: true
+    ownerId?: true
     _all?: true
   }
 
@@ -8405,7 +8418,7 @@ export namespace Prisma {
     cretatedAt: Date
     updatedAt: Date
     organizationId: string
-    userId: string
+    ownerId: string
     _count: ProjectCountAggregateOutputType | null
     _min: ProjectMinAggregateOutputType | null
     _max: ProjectMaxAggregateOutputType | null
@@ -8434,7 +8447,7 @@ export namespace Prisma {
     cretatedAt?: boolean
     updatedAt?: boolean
     organizationId?: boolean
-    userId?: boolean
+    ownerId?: boolean
     organization?: boolean | OrganizationDefaultArgs<ExtArgs>
     owner?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["project"]>
@@ -8448,7 +8461,7 @@ export namespace Prisma {
     cretatedAt?: boolean
     updatedAt?: boolean
     organizationId?: boolean
-    userId?: boolean
+    ownerId?: boolean
     organization?: boolean | OrganizationDefaultArgs<ExtArgs>
     owner?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["project"]>
@@ -8462,7 +8475,7 @@ export namespace Prisma {
     cretatedAt?: boolean
     updatedAt?: boolean
     organizationId?: boolean
-    userId?: boolean
+    ownerId?: boolean
     organization?: boolean | OrganizationDefaultArgs<ExtArgs>
     owner?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["project"]>
@@ -8476,10 +8489,10 @@ export namespace Prisma {
     cretatedAt?: boolean
     updatedAt?: boolean
     organizationId?: boolean
-    userId?: boolean
+    ownerId?: boolean
   }
 
-  export type ProjectOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "description" | "slug" | "avatarUrl" | "cretatedAt" | "updatedAt" | "organizationId" | "userId", ExtArgs["result"]["project"]>
+  export type ProjectOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "description" | "slug" | "avatarUrl" | "cretatedAt" | "updatedAt" | "organizationId" | "ownerId", ExtArgs["result"]["project"]>
   export type ProjectInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     organization?: boolean | OrganizationDefaultArgs<ExtArgs>
     owner?: boolean | UserDefaultArgs<ExtArgs>
@@ -8508,7 +8521,7 @@ export namespace Prisma {
       cretatedAt: Date
       updatedAt: Date
       organizationId: string
-      userId: string
+      ownerId: string
     }, ExtArgs["result"]["project"]>
     composites: {}
   }
@@ -8942,7 +8955,7 @@ export namespace Prisma {
     readonly cretatedAt: FieldRef<"Project", 'DateTime'>
     readonly updatedAt: FieldRef<"Project", 'DateTime'>
     readonly organizationId: FieldRef<"Project", 'String'>
-    readonly userId: FieldRef<"Project", 'String'>
+    readonly ownerId: FieldRef<"Project", 'String'>
   }
     
 
@@ -9428,7 +9441,8 @@ export namespace Prisma {
 
   export const OrganizationScalarFieldEnum: {
     id: 'id',
-    userId: 'userId',
+    name: 'name',
+    ownerId: 'ownerId',
     slug: 'slug',
     domain: 'domain',
     shouldAttachUsersByDomain: 'shouldAttachUsersByDomain',
@@ -9449,7 +9463,7 @@ export namespace Prisma {
     cretatedAt: 'cretatedAt',
     updatedAt: 'updatedAt',
     organizationId: 'organizationId',
-    userId: 'userId'
+    ownerId: 'ownerId'
   };
 
   export type ProjectScalarFieldEnum = (typeof ProjectScalarFieldEnum)[keyof typeof ProjectScalarFieldEnum]
@@ -9882,7 +9896,8 @@ export namespace Prisma {
     OR?: OrganizationWhereInput[]
     NOT?: OrganizationWhereInput | OrganizationWhereInput[]
     id?: StringFilter<"Organization"> | string
-    userId?: StringFilter<"Organization"> | string
+    name?: StringFilter<"Organization"> | string
+    ownerId?: StringFilter<"Organization"> | string
     slug?: StringFilter<"Organization"> | string
     domain?: StringNullableFilter<"Organization"> | string | null
     shouldAttachUsersByDomain?: BoolFilter<"Organization"> | boolean
@@ -9897,7 +9912,8 @@ export namespace Prisma {
 
   export type OrganizationOrderByWithRelationInput = {
     id?: SortOrder
-    userId?: SortOrder
+    name?: SortOrder
+    ownerId?: SortOrder
     slug?: SortOrder
     domain?: SortOrderInput | SortOrder
     shouldAttachUsersByDomain?: SortOrder
@@ -9917,7 +9933,8 @@ export namespace Prisma {
     AND?: OrganizationWhereInput | OrganizationWhereInput[]
     OR?: OrganizationWhereInput[]
     NOT?: OrganizationWhereInput | OrganizationWhereInput[]
-    userId?: StringFilter<"Organization"> | string
+    name?: StringFilter<"Organization"> | string
+    ownerId?: StringFilter<"Organization"> | string
     shouldAttachUsersByDomain?: BoolFilter<"Organization"> | boolean
     avatarUrl?: StringNullableFilter<"Organization"> | string | null
     cretatedAt?: DateTimeFilter<"Organization"> | Date | string
@@ -9930,7 +9947,8 @@ export namespace Prisma {
 
   export type OrganizationOrderByWithAggregationInput = {
     id?: SortOrder
-    userId?: SortOrder
+    name?: SortOrder
+    ownerId?: SortOrder
     slug?: SortOrder
     domain?: SortOrderInput | SortOrder
     shouldAttachUsersByDomain?: SortOrder
@@ -9947,7 +9965,8 @@ export namespace Prisma {
     OR?: OrganizationScalarWhereWithAggregatesInput[]
     NOT?: OrganizationScalarWhereWithAggregatesInput | OrganizationScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"Organization"> | string
-    userId?: StringWithAggregatesFilter<"Organization"> | string
+    name?: StringWithAggregatesFilter<"Organization"> | string
+    ownerId?: StringWithAggregatesFilter<"Organization"> | string
     slug?: StringWithAggregatesFilter<"Organization"> | string
     domain?: StringNullableWithAggregatesFilter<"Organization"> | string | null
     shouldAttachUsersByDomain?: BoolWithAggregatesFilter<"Organization"> | boolean
@@ -9968,7 +9987,7 @@ export namespace Prisma {
     cretatedAt?: DateTimeFilter<"Project"> | Date | string
     updatedAt?: DateTimeFilter<"Project"> | Date | string
     organizationId?: StringFilter<"Project"> | string
-    userId?: StringFilter<"Project"> | string
+    ownerId?: StringFilter<"Project"> | string
     organization?: XOR<OrganizationScalarRelationFilter, OrganizationWhereInput>
     owner?: XOR<UserScalarRelationFilter, UserWhereInput>
   }
@@ -9982,7 +10001,7 @@ export namespace Prisma {
     cretatedAt?: SortOrder
     updatedAt?: SortOrder
     organizationId?: SortOrder
-    userId?: SortOrder
+    ownerId?: SortOrder
     organization?: OrganizationOrderByWithRelationInput
     owner?: UserOrderByWithRelationInput
   }
@@ -9999,7 +10018,7 @@ export namespace Prisma {
     cretatedAt?: DateTimeFilter<"Project"> | Date | string
     updatedAt?: DateTimeFilter<"Project"> | Date | string
     organizationId?: StringFilter<"Project"> | string
-    userId?: StringFilter<"Project"> | string
+    ownerId?: StringFilter<"Project"> | string
     organization?: XOR<OrganizationScalarRelationFilter, OrganizationWhereInput>
     owner?: XOR<UserScalarRelationFilter, UserWhereInput>
   }, "id" | "slug">
@@ -10013,7 +10032,7 @@ export namespace Prisma {
     cretatedAt?: SortOrder
     updatedAt?: SortOrder
     organizationId?: SortOrder
-    userId?: SortOrder
+    ownerId?: SortOrder
     _count?: ProjectCountOrderByAggregateInput
     _max?: ProjectMaxOrderByAggregateInput
     _min?: ProjectMinOrderByAggregateInput
@@ -10031,7 +10050,7 @@ export namespace Prisma {
     cretatedAt?: DateTimeWithAggregatesFilter<"Project"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Project"> | Date | string
     organizationId?: StringWithAggregatesFilter<"Project"> | string
-    userId?: StringWithAggregatesFilter<"Project"> | string
+    ownerId?: StringWithAggregatesFilter<"Project"> | string
   }
 
   export type UserCreateInput = {
@@ -10334,6 +10353,7 @@ export namespace Prisma {
 
   export type OrganizationCreateInput = {
     id?: string
+    name: string
     slug: string
     domain?: string | null
     shouldAttachUsersByDomain?: boolean
@@ -10348,7 +10368,8 @@ export namespace Prisma {
 
   export type OrganizationUncheckedCreateInput = {
     id?: string
-    userId: string
+    name: string
+    ownerId: string
     slug: string
     domain?: string | null
     shouldAttachUsersByDomain?: boolean
@@ -10362,6 +10383,7 @@ export namespace Prisma {
 
   export type OrganizationUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
     domain?: NullableStringFieldUpdateOperationsInput | string | null
     shouldAttachUsersByDomain?: BoolFieldUpdateOperationsInput | boolean
@@ -10376,7 +10398,8 @@ export namespace Prisma {
 
   export type OrganizationUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
-    userId?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    ownerId?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
     domain?: NullableStringFieldUpdateOperationsInput | string | null
     shouldAttachUsersByDomain?: BoolFieldUpdateOperationsInput | boolean
@@ -10390,7 +10413,8 @@ export namespace Prisma {
 
   export type OrganizationCreateManyInput = {
     id?: string
-    userId: string
+    name: string
+    ownerId: string
     slug: string
     domain?: string | null
     shouldAttachUsersByDomain?: boolean
@@ -10401,6 +10425,7 @@ export namespace Prisma {
 
   export type OrganizationUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
     domain?: NullableStringFieldUpdateOperationsInput | string | null
     shouldAttachUsersByDomain?: BoolFieldUpdateOperationsInput | boolean
@@ -10411,7 +10436,8 @@ export namespace Prisma {
 
   export type OrganizationUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
-    userId?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    ownerId?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
     domain?: NullableStringFieldUpdateOperationsInput | string | null
     shouldAttachUsersByDomain?: BoolFieldUpdateOperationsInput | boolean
@@ -10441,7 +10467,7 @@ export namespace Prisma {
     cretatedAt?: Date | string
     updatedAt?: Date | string
     organizationId: string
-    userId: string
+    ownerId: string
   }
 
   export type ProjectUpdateInput = {
@@ -10465,7 +10491,7 @@ export namespace Prisma {
     cretatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     organizationId?: StringFieldUpdateOperationsInput | string
-    userId?: StringFieldUpdateOperationsInput | string
+    ownerId?: StringFieldUpdateOperationsInput | string
   }
 
   export type ProjectCreateManyInput = {
@@ -10477,7 +10503,7 @@ export namespace Prisma {
     cretatedAt?: Date | string
     updatedAt?: Date | string
     organizationId: string
-    userId: string
+    ownerId: string
   }
 
   export type ProjectUpdateManyMutationInput = {
@@ -10499,7 +10525,7 @@ export namespace Prisma {
     cretatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     organizationId?: StringFieldUpdateOperationsInput | string
-    userId?: StringFieldUpdateOperationsInput | string
+    ownerId?: StringFieldUpdateOperationsInput | string
   }
 
   export type StringFilter<$PrismaModel = never> = {
@@ -10866,7 +10892,8 @@ export namespace Prisma {
 
   export type OrganizationCountOrderByAggregateInput = {
     id?: SortOrder
-    userId?: SortOrder
+    name?: SortOrder
+    ownerId?: SortOrder
     slug?: SortOrder
     domain?: SortOrder
     shouldAttachUsersByDomain?: SortOrder
@@ -10877,7 +10904,8 @@ export namespace Prisma {
 
   export type OrganizationMaxOrderByAggregateInput = {
     id?: SortOrder
-    userId?: SortOrder
+    name?: SortOrder
+    ownerId?: SortOrder
     slug?: SortOrder
     domain?: SortOrder
     shouldAttachUsersByDomain?: SortOrder
@@ -10888,7 +10916,8 @@ export namespace Prisma {
 
   export type OrganizationMinOrderByAggregateInput = {
     id?: SortOrder
-    userId?: SortOrder
+    name?: SortOrder
+    ownerId?: SortOrder
     slug?: SortOrder
     domain?: SortOrder
     shouldAttachUsersByDomain?: SortOrder
@@ -10914,7 +10943,7 @@ export namespace Prisma {
     cretatedAt?: SortOrder
     updatedAt?: SortOrder
     organizationId?: SortOrder
-    userId?: SortOrder
+    ownerId?: SortOrder
   }
 
   export type ProjectMaxOrderByAggregateInput = {
@@ -10926,7 +10955,7 @@ export namespace Prisma {
     cretatedAt?: SortOrder
     updatedAt?: SortOrder
     organizationId?: SortOrder
-    userId?: SortOrder
+    ownerId?: SortOrder
   }
 
   export type ProjectMinOrderByAggregateInput = {
@@ -10938,7 +10967,7 @@ export namespace Prisma {
     cretatedAt?: SortOrder
     updatedAt?: SortOrder
     organizationId?: SortOrder
-    userId?: SortOrder
+    ownerId?: SortOrder
   }
 
   export type TokenCreateNestedManyWithoutUserInput = {
@@ -11742,6 +11771,7 @@ export namespace Prisma {
 
   export type OrganizationCreateWithoutOwnerInput = {
     id?: string
+    name: string
     slug: string
     domain?: string | null
     shouldAttachUsersByDomain?: boolean
@@ -11755,6 +11785,7 @@ export namespace Prisma {
 
   export type OrganizationUncheckedCreateWithoutOwnerInput = {
     id?: string
+    name: string
     slug: string
     domain?: string | null
     shouldAttachUsersByDomain?: boolean
@@ -11935,7 +11966,8 @@ export namespace Prisma {
     OR?: OrganizationScalarWhereInput[]
     NOT?: OrganizationScalarWhereInput | OrganizationScalarWhereInput[]
     id?: StringFilter<"Organization"> | string
-    userId?: StringFilter<"Organization"> | string
+    name?: StringFilter<"Organization"> | string
+    ownerId?: StringFilter<"Organization"> | string
     slug?: StringFilter<"Organization"> | string
     domain?: StringNullableFilter<"Organization"> | string | null
     shouldAttachUsersByDomain?: BoolFilter<"Organization"> | boolean
@@ -11972,7 +12004,7 @@ export namespace Prisma {
     cretatedAt?: DateTimeFilter<"Project"> | Date | string
     updatedAt?: DateTimeFilter<"Project"> | Date | string
     organizationId?: StringFilter<"Project"> | string
-    userId?: StringFilter<"Project"> | string
+    ownerId?: StringFilter<"Project"> | string
   }
 
   export type UserCreateWithoutTokensInput = {
@@ -12164,6 +12196,7 @@ export namespace Prisma {
 
   export type OrganizationCreateWithoutInvitesInput = {
     id?: string
+    name: string
     slug: string
     domain?: string | null
     shouldAttachUsersByDomain?: boolean
@@ -12177,7 +12210,8 @@ export namespace Prisma {
 
   export type OrganizationUncheckedCreateWithoutInvitesInput = {
     id?: string
-    userId: string
+    name: string
+    ownerId: string
     slug: string
     domain?: string | null
     shouldAttachUsersByDomain?: boolean
@@ -12247,6 +12281,7 @@ export namespace Prisma {
 
   export type OrganizationUpdateWithoutInvitesInput = {
     id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
     domain?: NullableStringFieldUpdateOperationsInput | string | null
     shouldAttachUsersByDomain?: BoolFieldUpdateOperationsInput | boolean
@@ -12260,7 +12295,8 @@ export namespace Prisma {
 
   export type OrganizationUncheckedUpdateWithoutInvitesInput = {
     id?: StringFieldUpdateOperationsInput | string
-    userId?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    ownerId?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
     domain?: NullableStringFieldUpdateOperationsInput | string | null
     shouldAttachUsersByDomain?: BoolFieldUpdateOperationsInput | boolean
@@ -12273,6 +12309,7 @@ export namespace Prisma {
 
   export type OrganizationCreateWithoutMembersInput = {
     id?: string
+    name: string
     slug: string
     domain?: string | null
     shouldAttachUsersByDomain?: boolean
@@ -12286,7 +12323,8 @@ export namespace Prisma {
 
   export type OrganizationUncheckedCreateWithoutMembersInput = {
     id?: string
-    userId: string
+    name: string
+    ownerId: string
     slug: string
     domain?: string | null
     shouldAttachUsersByDomain?: boolean
@@ -12350,6 +12388,7 @@ export namespace Prisma {
 
   export type OrganizationUpdateWithoutMembersInput = {
     id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
     domain?: NullableStringFieldUpdateOperationsInput | string | null
     shouldAttachUsersByDomain?: BoolFieldUpdateOperationsInput | boolean
@@ -12363,7 +12402,8 @@ export namespace Prisma {
 
   export type OrganizationUncheckedUpdateWithoutMembersInput = {
     id?: StringFieldUpdateOperationsInput | string
-    userId?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    ownerId?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
     domain?: NullableStringFieldUpdateOperationsInput | string | null
     shouldAttachUsersByDomain?: BoolFieldUpdateOperationsInput | boolean
@@ -12517,7 +12557,7 @@ export namespace Prisma {
     avatarUrl?: string | null
     cretatedAt?: Date | string
     updatedAt?: Date | string
-    userId: string
+    ownerId: string
   }
 
   export type ProjectCreateOrConnectWithoutOrganizationInput = {
@@ -12621,6 +12661,7 @@ export namespace Prisma {
 
   export type OrganizationCreateWithoutProjectsInput = {
     id?: string
+    name: string
     slug: string
     domain?: string | null
     shouldAttachUsersByDomain?: boolean
@@ -12634,7 +12675,8 @@ export namespace Prisma {
 
   export type OrganizationUncheckedCreateWithoutProjectsInput = {
     id?: string
-    userId: string
+    name: string
+    ownerId: string
     slug: string
     domain?: string | null
     shouldAttachUsersByDomain?: boolean
@@ -12698,6 +12740,7 @@ export namespace Prisma {
 
   export type OrganizationUpdateWithoutProjectsInput = {
     id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
     domain?: NullableStringFieldUpdateOperationsInput | string | null
     shouldAttachUsersByDomain?: BoolFieldUpdateOperationsInput | boolean
@@ -12711,7 +12754,8 @@ export namespace Prisma {
 
   export type OrganizationUncheckedUpdateWithoutProjectsInput = {
     id?: StringFieldUpdateOperationsInput | string
-    userId?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    ownerId?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
     domain?: NullableStringFieldUpdateOperationsInput | string | null
     shouldAttachUsersByDomain?: BoolFieldUpdateOperationsInput | boolean
@@ -12791,6 +12835,7 @@ export namespace Prisma {
 
   export type OrganizationCreateManyOwnerInput = {
     id?: string
+    name: string
     slug: string
     domain?: string | null
     shouldAttachUsersByDomain?: boolean
@@ -12890,6 +12935,7 @@ export namespace Prisma {
 
   export type OrganizationUpdateWithoutOwnerInput = {
     id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
     domain?: NullableStringFieldUpdateOperationsInput | string | null
     shouldAttachUsersByDomain?: BoolFieldUpdateOperationsInput | boolean
@@ -12903,6 +12949,7 @@ export namespace Prisma {
 
   export type OrganizationUncheckedUpdateWithoutOwnerInput = {
     id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
     domain?: NullableStringFieldUpdateOperationsInput | string | null
     shouldAttachUsersByDomain?: BoolFieldUpdateOperationsInput | boolean
@@ -12916,6 +12963,7 @@ export namespace Prisma {
 
   export type OrganizationUncheckedUpdateManyWithoutOwnerInput = {
     id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
     domain?: NullableStringFieldUpdateOperationsInput | string | null
     shouldAttachUsersByDomain?: BoolFieldUpdateOperationsInput | boolean
@@ -12979,7 +13027,7 @@ export namespace Prisma {
     avatarUrl?: string | null
     cretatedAt?: Date | string
     updatedAt?: Date | string
-    userId: string
+    ownerId: string
   }
 
   export type InviteUpdateWithoutOrganizationInput = {
@@ -13043,7 +13091,7 @@ export namespace Prisma {
     avatarUrl?: NullableStringFieldUpdateOperationsInput | string | null
     cretatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    userId?: StringFieldUpdateOperationsInput | string
+    ownerId?: StringFieldUpdateOperationsInput | string
   }
 
   export type ProjectUncheckedUpdateManyWithoutOrganizationInput = {
@@ -13054,7 +13102,7 @@ export namespace Prisma {
     avatarUrl?: NullableStringFieldUpdateOperationsInput | string | null
     cretatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    userId?: StringFieldUpdateOperationsInput | string
+    ownerId?: StringFieldUpdateOperationsInput | string
   }
 
 
