@@ -16,6 +16,7 @@ import { getUserProfile } from "./routes/auth/get-profile.controller";
 import { errorHandler } from "./error-handler";
 import { requestPasswordRecover } from "./routes/auth/request-password-recover.controller";
 import { resetPassword } from "./routes/auth/reset-password.controller";
+import { authenticateWithGithub } from "./routes/auth/authenticate-with-github.controller";
 
 const app = fastify().withTypeProvider<ZodTypeProvider>()
 
@@ -60,6 +61,9 @@ app.register(getUserProfile)
 //Route to change password and reset
 app.register(requestPasswordRecover)
 app.register(resetPassword)
+
+//Routes to register with non-created accounts
+app.register(authenticateWithGithub)
 
 app.listen({
   port: 3333
