@@ -14,6 +14,7 @@ import { createAccount } from "./routes/auth/createAccount.controller";
 import { authenticateWithPassword } from "./routes/auth/authenticate-with-password.controller";
 import { getUserProfile } from "./routes/auth/get-profile.controller";
 import { errorHandler } from "./error-handler";
+import { requestPasswordRecover } from "./routes/auth/request-password-recover.controller";
 
 const app = fastify().withTypeProvider<ZodTypeProvider>()
 
@@ -50,9 +51,13 @@ app.register(fastifyCors)
 app.register(createAccount)
 app.register(authenticateWithPassword)
 
+
 //Routes GET
 app.register(getUserProfile)
 
+
+//Route to change password
+app.register(requestPasswordRecover)
 
 app.listen({
   port: 3333
