@@ -18,6 +18,7 @@ import { requestPasswordRecover } from "./routes/auth/request-password-recover.c
 import { resetPassword } from "./routes/auth/reset-password.controller";
 import { authenticateWithGithub } from "./routes/auth/authenticate-with-github.controller";
 import { env } from "@acl/env";
+import { createOrganization } from "./routes/orgs/create-organization.controller";
 
 const app = fastify().withTypeProvider<ZodTypeProvider>()
 
@@ -63,7 +64,7 @@ app.register(fastifyCors)
 //Routes POST
 app.register(createAccount)
 app.register(authenticateWithPassword)
-
+app.register(createOrganization)
 
 //Routes GET
 app.register(getUserProfile)
