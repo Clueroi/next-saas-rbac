@@ -2,7 +2,10 @@
   "name": "@acl/api",
   "version": "1.0.0",
   "scripts": {
-    "dev": "tsx watch src/http/server.ts"
+    "dev": "pnpm env:load tsx watch src/http/server.ts",
+    "db:migrate":"pnpm env:load prisma migrate dev",
+    "db:studio":"pnpm env:load prisma studio",
+    "env:load": "dotenv -e ../../.env --"
   },
   "dependencies": {
     "@acl/auth": "workspace:*",
@@ -18,12 +21,14 @@
     "zod": "^3.24.4"
   },
   "devDependencies": {
+    "@acl/env": "workspace:*",
     "@acl/eslint-config": "workspace:*",
     "@acl/prettier": "workspace:*",
     "@acl/tsconfig": "workspace:*",
     "@faker-js/faker": "^9.7.0",
     "@types/bcryptjs": "^3.0.0",
     "@types/node": "^22.15.17",
+    "dotenv-cli": "^8.0.0",
     "prisma": "^6.7.0",
     "tsx": "^4.19.4"
   },
