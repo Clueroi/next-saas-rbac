@@ -17,12 +17,15 @@ import { errorHandler } from "./error-handler";
 import { requestPasswordRecover } from "./routes/auth/request-password-recover.controller";
 import { resetPassword } from "./routes/auth/reset-password.controller";
 import { authenticateWithGithub } from "./routes/auth/authenticate-with-github.controller";
+import { env } from "@acl/env";
 
 const app = fastify().withTypeProvider<ZodTypeProvider>()
 
 //Configurations
 app.setSerializerCompiler(serializerCompiler)
 app.setValidatorCompiler(validatorCompiler)
+
+// Documentation conguration
 app.register(fastifySwagger, {
   openapi: {
     info: {
@@ -30,7 +33,15 @@ app.register(fastifySwagger, {
       description: "Fullstack saas app with multi-tenant & RBAC",
       version: "1.0.0"
     },
-    servers: [],
+    components: {
+      securitySchemes: {
+        bearerAuth: {
+          type: 'http',
+          scheme: "bearer",
+          bearerFormat: "JWT"
+        }
+      }
+    }
   },
   transform: jsonSchemaTransform
 })
@@ -43,7 +54,7 @@ app.setErrorHandler(errorHandler)
 
 // Fastify Configuration
 app.register(fastifyJwt, {
-  secret: 'my-jwt-secret',
+  secret: env.JWT_SECERT,
 
 })
 app.register(fastifyCors)
@@ -66,7 +77,7 @@ app.register(resetPassword)
 app.register(authenticateWithGithub)
 
 app.listen({
-  port: 3333
+  port: env.PORT
 }).then(() => {
   console.log('Server is running on http://localhost:3333')
 })
